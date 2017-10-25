@@ -9,20 +9,26 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { ListEditComponent } from './list-items/list-edit/list-edit.component';
 import { FormsModule } from '@angular/forms';
+import { ShoppingComponent } from './shopping/shopping.component';
+import { CartComponent } from './shopping/cart/cart.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListItemsComponent,
-    ListEditComponent
+    ListEditComponent,
+    ShoppingComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     BsDropdownModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    TooltipModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
