@@ -1,0 +1,20 @@
+
+  <div class="form-group row">
+    <label for="name" class="col-sm-1 col-form-label">Name</label>
+    <div class="col-xl-4">
+      <input type="text" class="form-control" id="name" placeholder="input a name" [(ngModel)]="name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="amount" class="col-sm-1 col-form-label">Amount</label>
+    <div class="col-xl-4">
+      <input type="number" class="form-control" id="amount" placeholder="amount" [(ngModel)]="amount">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="des" class="col-sm-1 col-form-label">Description</label>
+    <div class="col-xl-4">
+        <textarea class="form-control" id="des" rows="3" placeholder="description" [(ngModel)]="description"></textarea>
+    </div>
+  </div>
+  <div class="btn btn-primary fa fa-floppy-o" (click)="onAddItems()"> Save</div>
