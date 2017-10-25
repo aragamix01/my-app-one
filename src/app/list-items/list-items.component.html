@@ -14,13 +14,13 @@
             <div class="card-header">
               {{item.name}}-({{item.amount}})
               <button class="btn btn-outline-danger fa fa-ban" 
-              style="float:right;cursor:pointer;width:90px"
+              style="float:right;cursor:pointer"
               (click)="onDeleteItem(i)"
-              > Delete</button>
+              ></button>
               <button class="btn btn-outline-warning fa fa-pencil" 
-              style="float:right;cursor:pointer;margin-right:10px;width:90px"
+              style="float:right;cursor:pointer;margin-right:10px"
               (click)="onEditItem(i, item)"
-              > Edit</button>
+              ></button>
             </div>
             <div class="card-body">
               <p class="card-text">{{item.description}}</p>
