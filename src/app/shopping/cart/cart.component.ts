@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   ShirtPrizeOV = 300;
   firstEms = 50;
   otherEms = 20;
+  sizeNM = ['M', 'L', 'XL'];
 
   lists: Lists[] = [
     new Lists(null, 1, true)
@@ -24,9 +25,7 @@ export class CartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    // console.log(this.lists);
-  }
+  ngOnInit() { }
 
   getSize(size: string, index: number) {
     this.lists[index].edit = true;
@@ -54,9 +53,15 @@ export class CartComponent implements OnInit {
   calPrice() {
     this.total = 0;
      let checkAmount = 0;
+     let isNM = false;
     this.lists.forEach( (list, index) => {
       if ( list.size != null && list.amount != null ) {
-        if ( list.size === 'M' || list.size === 'L' || list.size === 'XL' ) {
+        this.sizeNM.forEach(size => {
+          if (list.size === size) {
+            isNM = true;
+          }
+        });
+        if ( isNM === true ) {
           this.total += this.ShirtPrizeNM * +list.amount;
           checkAmount += +list.amount;
         } else {
@@ -70,12 +75,9 @@ export class CartComponent implements OnInit {
         i === 0 ? this.total += this.firstEms : this.total += this.otherEms;
       }
     }
-    // console.log(checkAmount);
-    // console.log(this.total);
   }
 
   value1Changed() {
-    // console.log('change');
     this.calPrice();
   }
 }
