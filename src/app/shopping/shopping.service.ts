@@ -10,7 +10,7 @@ export class ShoppingService {
     url = 'https://saintarmy-cheche48.firebaseio.com/';
 
     // customers: Customers[] = [
-    //     new Customers('Thammarat Kerdlumjiak', 'Sattahip',
+    //     new Customers('Thammarat Kerdlumjiak', 'Sattahip', '080-000-0000', 'aragamix01@gmail.com',
     //         [
     //             new Lists('M', 2, false),
     //             new Lists('L', 2, false)
@@ -31,7 +31,11 @@ export class ShoppingService {
         });
     }
 
-    storeCustomers( customers: Customers ) {
+    storeCustomers(customers: Customers[]) {
         return this.http.put(this.url + 'customers.json', customers);
+    }
+
+    test(lists: Lists[]) {
+        console.log(lists);
     }
 }

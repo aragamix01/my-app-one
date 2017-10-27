@@ -29,6 +29,7 @@ export class CartComponent implements OnInit {
   total = 0;
   isEditSize = true;
   isEms = false;
+  address: string;
 
 
   constructor() {}
@@ -88,5 +89,9 @@ export class CartComponent implements OnInit {
 
   value1Changed() {
     this.calPrice();
+  }
+
+  test() {
+    console.log('child');
   }
 }

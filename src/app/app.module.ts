@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,8 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { CartComponent } from './shopping/cart/cart.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CustomerComponent } from './shopping/customer/customer.component';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { CustomerComponent } from './shopping/customer/customer.component';
     ListEditComponent,
     ShoppingComponent,
     CartComponent,
-    CustomerComponent
+    CustomerComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { CustomerComponent } from './shopping/customer/customer.component';
     FormsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    AlertModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
 
+  name: string;
+  tel: string;
+  email: string;
+
   constructor() { }
 
   ngOnInit() {

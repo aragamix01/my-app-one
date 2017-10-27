@@ -67,6 +67,11 @@
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">EMS</span>
             </label>
+            <br>
+              <div [collapse]="!isEms">
+                <label for="address">กรอกที่อยู่</label>
+                <textarea class="form-control" id="address" rows="3" [(ngModel)]="address"></textarea>
+              </div>
             <hr>
             <ul class="list-group">
               <li class="list-group-item" 
