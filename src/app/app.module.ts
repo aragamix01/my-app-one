@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { CartComponent } from './shopping/cart/cart.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CustomerComponent } from './shopping/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     ListItemsComponent,
     ListEditComponent,
     ShoppingComponent,
-    CartComponent
+    CartComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
