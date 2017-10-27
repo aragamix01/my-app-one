@@ -13,7 +13,7 @@
                 <div class="input-group-btn" dropdown>
                   <button 
                   dropdownToggle type="button" 
-                  class="btn btn-outline-warning dropdown-toggle" 
+                  class="btn btn-primary dropdown-toggle" 
                   aria-haspopup="true" aria-expanded="false" 
                   >
                     Size
@@ -46,15 +46,19 @@
                 (ngModelChange)="value1Changed()"
                 >
                 <ng-container *ngIf="i === 0; else elseTemplate">
-                  <button class="input-group-addon btn btn-outline-warning fa fa-plus" 
-                  tooltip="สั่งเพิ่ม" placement="right" 
-                  (click)="newOrder()" 
-                  ></button>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary fa fa-plus" 
+                        tooltip="สั่งเพิ่ม" placement="right" 
+                        (click)="newOrder()" 
+                        ></button>
+                    </span>
                 </ng-container>
                 <ng-template #elseTemplate>
-                  <button class="input-group-addon btn btn-outline-danger fa fa-minus" tooltip="ลบ" 
-                  placement="right" (click)="rmOrder(i)"
-                  ></button>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger fa fa-minus" tooltip="ลบ" 
+                        placement="right" (click)="rmOrder(i)"
+                        ></button>
+                    </span>
                 </ng-template>
               </div>
             </div>
