@@ -8,4 +8,7 @@ app.use(express.static(__dirname + '/dist'));
 app.get('/shopping', function (req, res) {
   res.send('shopping')
 })
+app.get('/success', function (req, res) {
+    res.send('success')
+  })
 app.listen(process.env.PORT || 8080);
