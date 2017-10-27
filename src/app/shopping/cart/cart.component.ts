@@ -8,6 +8,11 @@ import { ChangeDetectionStrategy, Component, OnChanges, OnInit, SimpleChanges } 
 })
 export class CartComponent implements OnInit {
 
+  ShirtPrizeNM = 250;
+  ShirtPrizeOV = 300;
+  firstEms = 50;
+  otherEms = 20;
+
   lists: Lists[] = [
     new Lists(null, 1, true)
   ];
@@ -27,11 +32,11 @@ export class CartComponent implements OnInit {
     this.lists[index].edit = true;
     this.lists[index].size = size;
     if ( size === 'OV' ) {
-      // this.isEditSize = false;
       this.lists[index].edit = false;
       this.lists[index].size = '';
       console.log(this.isEditSize);
     }
+    this.calPrice();
   }
 
   newOrder() {
@@ -52,18 +57,25 @@ export class CartComponent implements OnInit {
     this.lists.forEach( (list, index) => {
       if ( list.size != null && list.amount != null ) {
         if ( list.size === 'M' || list.size === 'L' || list.size === 'XL' ) {
-          this.total += 250 * +list.amount;
+          this.total += this.ShirtPrizeNM * +list.amount;
           checkAmount += +list.amount;
         } else {
-          this.total += 300 * +list.amount;
+          this.total += this.ShirtPrizeOV * +list.amount;
           checkAmount += +list.amount;
         }
       }
     });
-    for ( let i = 0 ; i < checkAmount ; i++) {
-      i === 0 ? this.total += 50 : this.total += 20;
+    if ( this.isEms === true ) {
+      for ( let i = 0 ; i < checkAmount ; i++) {
+        i === 0 ? this.total += this.firstEms : this.total += this.otherEms;
+      }
     }
-    console.log(checkAmount);
-    console.log(this.total);
+    // console.log(checkAmount);
+    // console.log(this.total);
+  }
+
+  value1Changed() {
+    // console.log('change');
+    this.calPrice();
   }
 }

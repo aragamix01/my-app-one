@@ -8,10 +8,14 @@
         <div class="card-block">
           <hr>
           <div class="row" *ngFor="let list of lists; let i = index" style="margin-top: 20px;">
-            <div class="col-md-6">
+            <div class="col-md-8">
               <div class="input-group">
                 <div class="input-group-btn" dropdown>
-                  <button dropdownToggle type="button" class="btn btn-outline-warning dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                  <button 
+                  dropdownToggle type="button" 
+                  class="btn btn-outline-warning dropdown-toggle" 
+                  aria-haspopup="true" aria-expanded="false" 
+                  >
                     Size
                   </button>
                   <ul *dropdownMenu class="dropdown-menu" role="menu">
@@ -30,31 +34,56 @@
                     </li>
                   </ul>
                 </div>
-                <input type="text" class="form-control" placeholder="กรุณาเลือกไซส์" [(ngModel)]="list.size" [disabled]="list.edit" [style]="{width:'20px !important'}">
-                <input type="number" min="1" class="form-control" placeholder="จำนวน" [(ngModel)]="list.amount">
+                <input type="text" class="form-control" 
+                placeholder="เลือกไซส์" 
+                [(ngModel)]="list.size" 
+                [disabled]="list.edit"
+                [style]="{width:'20px !important'}" 
+                >
 
+                <input type="number" min="1" class="form-control" 
+                placeholder="จำนวน" [(ngModel)]="list.amount" 
+                (ngModelChange)="value1Changed()"
+                >
                 <ng-container *ngIf="i === 0; else elseTemplate">
-                  <button class="btn btn-warning fa fa-plus" tooltip="สั่งเพิ่ม" placement="right" (click)="newOrder()" ></button>
+                  <button class="input-group-addon btn btn-outline-warning fa fa-plus" 
+                  tooltip="สั่งเพิ่ม" placement="right" 
+                  (click)="newOrder()" 
+                  ></button>
                 </ng-container>
                 <ng-template #elseTemplate>
-                  <button class="btn btn-danger fa fa-minus" tooltip="ลบ" placement="right" (click)="rmOrder(i)"></button>
+                  <button class="input-group-addon btn btn-outline-danger fa fa-minus" tooltip="ลบ" 
+                  placement="right" (click)="rmOrder(i)"
+                  ></button>
                 </ng-template>
               </div>
             </div>
           </div>
-          <div class="col-lg-6" style="margin-top: 20px;">
+          <div class="col-md-8" style="margin-top: 20px;">
             <hr>
             <label class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" [(ngModel)]="isEms">
+              <input type="checkbox" class="custom-control-input" 
+              [(ngModel)]="isEms" (ngModelChange)="value1Changed()"
+              >
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">EMS</span>
             </label>
             <hr>
-            <li *ngFor="let list of lists"> {{list.size}} : {{list.amount}} </li>
-            รวมราคา : {{ total }} บาท
-            <hr>
-            <br>
-            <button class="btn btn-primary" (click)="calPrice()">คำนวณราคา</button>
+            <ul class="list-group">
+              <li class="list-group-item" 
+              *ngFor="let list of lists"
+              > 
+              <ng-container *ngIf="list.size == null; else elseTemplate">
+                กรุณาเลือก ไซส์เสื้อ
+              </ng-container>
+              <ng-template #elseTemplate>
+                ไซส์ {{ list.size }} จำนวน {{ list.amount }} ตัว
+              </ng-template>
+              </li>
+            </ul>
+            <p style="float: right;margin-top: 20px">
+              รวมราคา : {{ total }} บาท
+            </p>
           </div>
         </div>
       </div>
