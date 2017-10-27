@@ -3,7 +3,7 @@
     <div class="col-md-10">
       <div class="card">
         <div class="card-header">
-          Size เสื้อ
+          Size เสื้อ <span class="star">*</span>
         </div>
         <div class="card-block">
           <hr>
@@ -37,6 +37,7 @@
                 >
 
                 <input type="number" min="1" class="form-control" 
+                tooltip="จำนวน"
                 placeholder="จำนวน" [(ngModel)]="list.amount" 
                 (ngModelChange)="value1Changed()"
                 >
@@ -60,18 +61,18 @@
           </div>
           <div class="col-md-8" style="margin-top: 20px;">
             <hr>
-            <label class="custom-control custom-checkbox">
+            <label class="custom-control custom-checkbox" tooltip="ส่ง EMS">
               <input type="checkbox" class="custom-control-input" 
               [(ngModel)]="isEms" (ngModelChange)="value1Changed()"
               >
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">EMS</span>
             </label>
-            <br>
               <div [collapse]="!isEms">
-                <label for="address">กรอกที่อยู่</label>
+                <label for="address">กรอกที่อยู่ <span class="star">*</span></label>
                 <textarea class="form-control" id="address" rows="3" [(ngModel)]="address"></textarea>
               </div>
+            <p> ส่ง ems เพิ่ม 50 บาท ตัวต่อไปตัวละ 20 <span class="star">*</span></p>
             <hr>
             <ul class="list-group">
               <li class="list-group-item" 
