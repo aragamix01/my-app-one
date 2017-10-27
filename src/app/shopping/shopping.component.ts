@@ -56,7 +56,7 @@ export class ShoppingComponent implements OnInit {
       let adrs;
       this.cart.isEms === true ? adrs = this.cart.address : adrs = '';
       console.log(this.cart.address);
-      const customer = new Customers(this.customer.name, adrs, this.customer.tel, this.customer.email, this.cart.lists);
+      const customer = new Customers(this.customer.name, adrs, this.customer.tel, this.customer.email, this.cart.total, this.cart.lists);
       this.customers.push(customer);
       this.shoppingService.storeCustomers(this.customers).subscribe(
         (res: Response) => {
