@@ -48,6 +48,7 @@ export class CartComponent implements OnInit {
 
   rmOrder(index: number) {
     this.lists.splice(index, 1);
+    this.calPrice();
   }
 
   calPrice() {
