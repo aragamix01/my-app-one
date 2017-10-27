@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: 'shopping' , pathMatch: 'full'},
+    // { path: '', redirectTo: 'shopping' , pathMatch: 'full'},
     { path: 'shopping', component: ShoppingComponent },
     { path: 'success', component: SuccessComponent }
 ];
