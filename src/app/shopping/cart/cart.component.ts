@@ -1,5 +1,13 @@
-import { Lists } from './lists.model';
-import { ChangeDetectionStrategy, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Lists
+} from './lists.model';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -23,14 +31,14 @@ export class CartComponent implements OnInit {
   isEms = false;
 
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   getSize(size: string, index: number) {
     this.lists[index].edit = true;
     this.lists[index].size = size;
-    if ( size === 'OV' ) {
+    if (size === 'OV') {
       this.lists[index].edit = false;
       this.lists[index].size = '';
       console.log(this.isEditSize);
@@ -53,16 +61,16 @@ export class CartComponent implements OnInit {
 
   calPrice() {
     this.total = 0;
-     let checkAmount = 0;
-     let isNM = false;
-    this.lists.forEach( (list, index) => {
-      if ( list.size != null && list.amount != null ) {
+    let checkAmount = 0;
+    let isNM = false;
+    this.lists.forEach((list, index) => {
+      if (list.size != null && list.amount != null) {
         this.sizeNM.forEach(size => {
           if (list.size === size) {
             isNM = true;
           }
         });
-        if ( isNM === true ) {
+        if (isNM === true) {
           this.total += this.ShirtPrizeNM * +list.amount;
           checkAmount += +list.amount;
         } else {
@@ -71,8 +79,8 @@ export class CartComponent implements OnInit {
         }
       }
     });
-    if ( this.isEms === true ) {
-      for ( let i = 0 ; i < checkAmount ; i++) {
+    if (this.isEms === true) {
+      for (let i = 0; i < checkAmount; i++) {
         i === 0 ? this.total += this.firstEms : this.total += this.otherEms;
       }
     }
