@@ -19,14 +19,10 @@
                     Size
                   </button>
                   <ul *dropdownMenu class="dropdown-menu" role="menu">
-                    <li role="menuitem">
-                      <a class="dropdown-item" (click)="getSize('M',i)">M</a>
-                    </li>
-                    <li role="menuitem">
-                      <a class="dropdown-item" (click)="getSize('L',i)">L</a>
-                    </li>
-                    <li role="menuitem">
-                      <a class="dropdown-item" (click)="getSize('XL',i)">XL</a>
+                    <li role="menuitem" 
+                    *ngFor="let nm of sizeNM"
+                    >
+                      <a class="dropdown-item" (click)="getSize(nm,i)">{{ nm }}</a>
                     </li>
                     <li class="divider dropdown-divider"></li>
                     <li role="menuitem">
@@ -38,7 +34,6 @@
                 placeholder="เลือกไซส์" 
                 [(ngModel)]="list.size" 
                 [disabled]="list.edit"
-                [style]="{width:'20px !important'}" 
                 >
 
                 <input type="number" min="1" class="form-control" 

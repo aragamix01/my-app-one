@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   ShirtPrizeOV = 300;
   firstEms = 50;
   otherEms = 20;
-  sizeNM = ['M', 'L', 'XL'];
+  sizeNM = ['S', 'M', 'L', 'XL'];
 
   lists: Lists[] = [
     new Lists(null, 1, true)
