@@ -1,11 +1,7 @@
-<div class="container" style="margin-top:20px">
+<div class="container">
   <div class="row">
-    <div class="col-md-10">
-      <div class="card">
-        <div class="card-header">
-          Size เสื้อ <span class="star">*</span>
-        </div>
-        <div class="card-block">
+    <div class="col-md-12">
+          <h5>Size เสื้อ <span class="star">*</span></h5>
           <hr>
           <div class="row" *ngFor="let list of lists; let i = index" style="margin-top: 20px;">
             <div class="col-md-8">
@@ -59,7 +55,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8" style="margin-top: 20px;">
+          <div class="col-md-10" style="margin-top: 20px;">
             <hr>
             <label class="custom-control custom-checkbox" tooltip="ส่ง EMS">
               <input type="checkbox" class="custom-control-input" 
@@ -86,12 +82,9 @@
               </ng-template>
               </li>
             </ul>
-            <p style="float: right;margin-top: 20px">
+            <p style="margin-top: 20px">
               รวมราคา : {{ total }} บาท
             </p>
           </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

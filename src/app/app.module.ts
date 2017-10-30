@@ -16,6 +16,10 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CustomerComponent } from './shopping/customer/customer.component';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { SuccessComponent } from './success/success.component';
+import { DetailComponent } from './detail/detail.component';
+import { DataTableModule, SharedModule } from 'primeng/primeng';
+import { FieldsetModule } from 'primeng/primeng';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { SuccessComponent } from './success/success.component';
     ShoppingComponent,
     CartComponent,
     CustomerComponent,
-    SuccessComponent
+    SuccessComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,11 @@ import { SuccessComponent } from './success/success.component';
     CollapseModule.forRoot(),
     TooltipModule.forRoot(),
     AlertModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    DataTableModule,
+    SharedModule,
+    FieldsetModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

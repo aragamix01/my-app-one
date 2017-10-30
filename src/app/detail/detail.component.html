@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" *ngIf="haveData">
+      <p-dataTable [value]="customCustomer">
+        <p-column field="name" header="name"></p-column>
+        <p-column field="tel" header="tel"></p-column>
+        <p-column field="email" header="email"></p-column>
+        <p-column field="location" header="location"></p-column>
+        <p-column field="size" header="size"></p-column>
+        <p-column field="total" header="total"></p-column>
+      </p-dataTable>
+    </div>
+  </div>
+</div>
