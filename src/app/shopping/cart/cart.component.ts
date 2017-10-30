@@ -27,6 +27,8 @@ export class CartComponent implements OnInit {
   ];
 
   total = 0;
+  shippingCost = 0;
+  shirtCost = 0;
   isEditSize = true;
   isEms = false;
   address: string;
@@ -62,6 +64,8 @@ export class CartComponent implements OnInit {
 
   calPrice() {
     this.total = 0;
+    this.shippingCost = 0;
+    this.shirtCost = 0;
     let checkAmount = 0;
     let isNM = false;
     this.lists.forEach((list, index) => {
@@ -80,11 +84,13 @@ export class CartComponent implements OnInit {
         }
       }
     });
+    this.shirtCost = this.total;
     if (this.isEms === true) {
       for (let i = 0; i < checkAmount; i++) {
-        i === 0 ? this.total += this.firstEms : this.total += this.otherEms;
+        i === 0 ? this.shippingCost += this.firstEms : this.shippingCost += this.otherEms;
       }
     }
+    this.total += this.shippingCost;
   }
 
   value1Changed() {
