@@ -9,9 +9,9 @@ h5 {
 .block {
     padding: 50px;
     background-color: #ffffff !important;
-    border-right: 1px solid #cacaca !important;
-    border-left: 1px solid #cacaca !important;
     border-bottom: 1px solid #cacaca !important;
+    border-left: 1px solid #cacaca !important;
+    border-right: 1px solid #cacaca !important;
 }
 
 @media only screen and (max-device-width : 640px) {
@@ -21,8 +21,8 @@ h5 {
         padding-left: 20px;
         padding-right: 20px;
         background-color: #ffffff !important;
+        border-bottom: 1px solid #cacaca !important;
         border-right: 1px solid #cacaca !important;
         border-left: 1px solid #cacaca !important;
-        border-bottom: 1px solid #cacaca !important;
     }
 }
