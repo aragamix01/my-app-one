@@ -11,16 +11,15 @@ export class ShoppingService {
 
     constructor(private http: Http) {}
 
-    getCustomers(): Promise< any > {
-        return new Promise( (resolve, reject) => {
-            this.http.get(this.url + 'customers.json')
-            .subscribe(
-                (res: Response) => {
-                    resolve(res.json());
-                }
-            );
-        });
+    getCustomers() {
+        return this.http.get(this.url + 'customers.json')
+        .map(
+            (res: Response) => {
+                return res.json();
+            }
+        ).toPromise();
     }
+
 
     storeCustomers(customers: Customers[]) {
         return this.http.put(this.url + 'customers.json', customers);
